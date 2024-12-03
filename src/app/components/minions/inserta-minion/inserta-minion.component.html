@@ -1,1 +1,20 @@
-<p>inserta-minion works!</p>
+<div class="container w-50 my-5">
+  <h3>Insertar Minion</h3>
+  <hr>
+  <form class ="mb-5">
+    <div class="my-3">
+      <label class="form-label">Seleccionar un minion</label>
+      <select class="form-select" name="minion" [(ngModel)]="minion">
+        @for (minion of datos; track minion.id) {
+          <option [ngValue]="minion">{{minion.nombre}}</option>
+        }
+      </select>
+      <label class="form-label" for="imagen">Selecciona un minion</label>
+    </div>
+    <div class="d-flex gap-2">
+      <button class="btn btn-success" (click)="insertarMinion()" routerLink="/Listado">Insertar</button>
+      <button class="btn btn-danger" routerLink="/Listado">Cancelar</button>
+    </div>
+  </form>
+
+</div>

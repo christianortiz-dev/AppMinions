@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-center mt-3">
+  <div class="rounded-5 col-4">
+    <h1 class="text-center">Modificar Minion</h1>
+    <hr>
+    <form class="mb-5">
+      <div class="my-3">
+        <label for="id" class="form-label">Id:</label>
+        <input type="number" class="form-control" name="id" [(ngModel)]="minion.id" disabled>
+      </div>
+      <div class="my-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="minion.nombre">
+      </div>
+      <div class="my-3">
+        <label for="biografía" class="form-label">Biografía:</label>
+        <input type="text" class="form-control" name="biografía" [(ngModel)]="minion.bio">
+      </div>
+      <div class="my-3">
+        <label for="imagen" class="form-label">Imagen:</label>
+        <input type="text" class="form-control" name="imagen" [(ngModel)]="minion.img">
+      </div>
+      <div class="my-3">
+        <label for="cumple" class="form-label">Cumpleaños:</label>
+        <input type="number" class="form-control" name="cumple" [(ngModel)]="minion.birth">
+      </div>
+      <div class="my-3">
+        <label for="bando" class="form-label">Bando:</label>
+        <input type="text" class="form-control" name="bando" [(ngModel)]="minion.side">
+      </div>
+      <div class="my-3">
+        <label class="form-label">Imagen</label>
+        <select class="form-select" name="minion" [(ngModel)]="minion.img">
+          @for (minion of datos; track minion.id) {
+          <option [ngValue]="minion.img">{{minion.img}}</option>
+          }
+        </select>
+        <label class="form-label" for="imagen">Selecciona una imagen</label>
+      </div>
+      <button class="btn btn-primary" (click)="(modificarMinion(minion))" routerLink="/Listado">Modificar</button>
+      <button class="btn btn-danger ms-3" routerLink="/Listado">Cancelar</button>
+    </form>
+  </div>
+</div>
